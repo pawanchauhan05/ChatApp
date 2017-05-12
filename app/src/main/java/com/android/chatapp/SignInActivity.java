@@ -52,6 +52,10 @@ public class SignInActivity extends AppCompatActivity implements  GoogleApiClien
 
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+        if(Utils.readPreferenceData(getApplicationContext(), "LOG_IN", "").equals("true")) {
+            startActivity(new Intent(this, ContactsActivity.class));
+        }
     }
 
     @Override
